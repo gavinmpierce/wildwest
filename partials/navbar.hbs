@@ -1,0 +1,19 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="/" class="navbar-logo">Wild West Forum</a>
+    
+    <ul class="navbar-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/comment/new">Post Here</a></li>
+
+     {{#if user}}
+        <li class="user-info">
+          Howdy, <strong>{{user.username}}</strong>
+        </li>
+        <li><a href="/logout" class="logout-btn">Log Out</a></li>
+      {{else}}
+        <li><a href="/login" class="login-btn">Log In</a></li>
+      {{/if}}
+    </ul>
+  </div>
+</nav>
