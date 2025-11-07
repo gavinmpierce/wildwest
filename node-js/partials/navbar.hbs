@@ -1,0 +1,19 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="/" class="navbar-logo">MyWebsite</a>
+
+    <ul class="navbar-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/comments">Comments</a></li>
+
+      {{#if user}}
+        <li><a href="/comment/new">New Comment</a></li>
+        <li class="user-info">Logged in as <strong>{{user.username}}</strong></li>
+        <li><a href="/logout" class="logout-btn">Logout</a></li>
+      {{else}}
+        <li><a href="/register">Register</a></li>
+        <li><a href="/login" class="login-btn">Login</a></li>
+      {{/if}}
+    </ul>
+  </div>
+</nav>
