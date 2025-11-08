@@ -23,22 +23,42 @@ app.use(session({
 }));
 
 app.get('/',(req,res) => {
-    let name = req.session.userName || "Guest";
-    res.send(`Hello ${name}`);
+    res.render('main');
 });
 
-app.get('/profile', requireLogin, (req,res) => {
-    res.send(`Welcome ${req.session.userName}, you are an instructor`);
+app.get('/register', (req,res) => {
+    res.render('register');
+})
+
+
+app.get('/login',(req,res) => {
+    res.render('login');
+});
+
+app.get('/comments',(req,res) => {
+    res.render('comments');
+})
+
+app.get('/comment/new',requireLogin,(req,res) => {
+    res.render('newcomment');
+})
+
+app.get('/register',(req,res) => {
+    
 })
 
 app.get('/login',(req,res) => {
-    res.send("You need to log in");
-});
-
-app.get('/fakelogin',(req,res) => {
-    req.session.userName = "Gavin";
-    res.send("Logged in");
+    
 })
+
+app.get('/logout',requireLogin,(req,res) => {
+    
+})
+
+app.get('/comment',requireLogin,(req,res) => {
+    
+})
+
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
