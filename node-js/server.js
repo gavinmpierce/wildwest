@@ -2,6 +2,11 @@ const express = require('express');
 const session = require('express-session');
 const { requireLogin } = require("./auth");
 const app = express();
+const path = require('path');
+const hbs = require('hbs');
+
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'views'));
 
 
 const PORT = 8080;
