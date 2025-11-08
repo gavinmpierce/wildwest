@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+{{> navbar}}
+
+<main class="main-content">
+  <section class="form-section">
+    <h1>Post a Comment</h1>
+    <p class="subtitle">Speak your mind, partner — the frontier’s all ears.</p>
+
+    <form action="/comment/new" method="POST" class="auth-form">
+      <label for="title">Title:</label>
+      <input 
+        type="text" 
+        id="title" 
+        name="title" 
+        required 
+        placeholder="Give your comment a title">
+
+      <label for="content">Comment:</label>
+      <textarea 
+        id="content" 
+        name="content" 
+        rows="5" 
+        required 
+        placeholder="Write your message here..."></textarea>
+
+      <button type="submit" class="btn">Post Comment</button>
+    </form>
+  </section>
+</main>
+
+{{> footer}}
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+{{> navbar}}
+
+<main class="main-content">
+  <section class="comments-section">
+    <h1>The Town Board</h1>
+    <p class="subtitle">Where the townsfolk share their thoughts and tales.</p>
+
+    {{#if user}}
+      <div class="comment-action">
+        <a href="/comment/new" class="btn">Post a New Comment</a>
+      </div>
+    {{else}}
+      <p class="login-prompt">
+        <a href="/login">Log in</a> to share your story.
+      </p>
+    {{/if}}
+
+    {{#if comments.length}}
+      <ul class="comment-list">
+        {{#each comments}}
+          <li class="comment-item">
+            <h3 class="comment-title">{{this.title}}</h3>
+            <p class="comment-content">{{this.content}}</p>
+            <p class="comment-meta">
+              Posted by <strong>{{this.author}}</strong> 
+              on {{this.date}}
+            </p>
+          </li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <p class="no-comments">No comments yet. Be the first to post!</p>
+    {{/if}}
+  </section>
+</main>
+
+{{> footer}}
+</body>
+</html>

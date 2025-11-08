@@ -6,12 +6,20 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  {{> navbar}}
+{{> navbar}}
 
-  <main>
-    {{{body}}}
-  </main>
+<main class="main-content">
+  <section class="welcome-section">
+    <h1>Welcome to the Wild West</h1>
+    <p class="subtitle">The Last Frontier</p>
 
-  {{> footer}}
+    <p class="intro-text">
+      Saddle up, partner! This is the Wild West Comment Forum - where voices roam free and everyone's got a story to tell. 
+      Browse the latest posts, share your thoughts, or start a new discussion. Just remember: keep it friendly out on the frontier.
+    </p>
+  </section>
+</main>
+
+{{> footer}}
 </body>
 </html>

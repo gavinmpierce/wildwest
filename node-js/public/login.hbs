@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+{{> navbar}}
+
+<main class="main-content">
+  <section class="form-section">
+    <h1>Login</h1>
+    <p class="subtitle">Welcome back, partner! Time to ride again.</p>
+
+    <form action="/login" method="POST" class="auth-form">
+      <label for="username">Name:</label>
+      <input type="text" id="username" name="username" required placeholder="Enter your name">
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required placeholder="Enter your password">
+
+      <button type="submit" class="btn">Login</button>
+    </form>
+
+    <p class="alt-link">
+      Don’t have an account? <a href="/register">Register here</a>.
+    </p>
+  </section>
+</main>
+
+{{> footer}}
+</body>
+</html>
