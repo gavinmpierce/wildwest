@@ -9,6 +9,8 @@ const cookieParser = require('cookie-parser');
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
+hbs.registerPartials(path.join(__dirname, 'views', 'partials'));
+
 // parses form submissions
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser()); 
@@ -16,6 +18,7 @@ app.use(cookieParser());
 
 const PORT = 8080;
 
+app.use(express.static('public'));
 
 app.use(session({
     secret: 'scooby',
@@ -101,7 +104,7 @@ app.get('/comments',(req,res) => {
         date: ""
     }
 
-    res.render('comments',{ user: user }, {comments:comments});
+    res.render('comments');
 })
 
 app.get('/comment/new',requireLogin,(req,res) => {
